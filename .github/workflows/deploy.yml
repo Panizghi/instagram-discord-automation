@@ -1,0 +1,27 @@
+name: Instagram to Discord
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Run once every 24 hours (at midnight)
+
+jobs:
+  run-python-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: pip install instaloader discord-webhook requests pyshorteners
+
+      - name: Run Python script
+        env:
+          INSTAGRAM_USERNAME: ${{ secrets.INSTAGRAM_USERNAME }}
+          DISCORD_WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: python main.py
