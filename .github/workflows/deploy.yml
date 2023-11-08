@@ -18,7 +18,7 @@ jobs:
           python-version: 3.8
 
       - name: Install dependencies
-        run: pip install instaloader discord-webhook requests pyshorteners
+        run: pip install instaloader requests pyshorteners
 
       - name: Run Python script
         env:
