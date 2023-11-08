@@ -1,5 +1,4 @@
 import instaloader
-import discord
 import requests
 import pyshorteners
 import os
