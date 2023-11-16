@@ -6,7 +6,7 @@ import os
 instagram_username = os.environ['INSTAGRAM_USERNAME']
 
 # Discord webhook URL
-discord_webhook_url = os.environ['WEBHOOK_URL']
+discord_webhook_url = os.environ['DISCORD_WEBHOOK_URL']
 
 posted_urls = []
 
